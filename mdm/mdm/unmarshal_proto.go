@@ -196,7 +196,9 @@ func protoToCommand(pb *mdmproto.Command) *Command {
 
 		pbattributes := pbc.GetAttributes()
 		if pbattributes != nil {
-			attributes = &InstallApplicationAttributes{}
+			attributes = &InstallApplicationAttributes{
+				VpnUuid: nilIfEmptyString(pbattributes.GetVpnUuid()),
+			}
 		}
 
 		cmd.InstallApplication = &InstallApplication{

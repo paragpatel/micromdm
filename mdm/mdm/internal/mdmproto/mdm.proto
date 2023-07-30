@@ -163,7 +163,9 @@ message InstallApplicationOptions {
 
 message InstallApplicationConfiguration {}
 
-message InstallApplicationAttributes {}
+message InstallApplicationAttributes {
+  string vpn_uuid = 1;
+}
 
 
 message InstallEnterpriseApplication {

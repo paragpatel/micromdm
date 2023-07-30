@@ -215,7 +215,9 @@ func commandToProto(cmd *Command) (*mdmproto.Command, error) {
 			configuration = &mdmproto.InstallApplicationConfiguration{}
 		}
 		if cmd.InstallApplication.Attributes != nil {
-			attributes = &mdmproto.InstallApplicationAttributes{}
+			attributes = &mdmproto.InstallApplicationAttributes{
+				VpnUuid: emptyStringIfNil(cmd.InstallApplication.Attributes.VpnUuid),
+			}
 		}
 		cmdproto.Request = &mdmproto.Command_InstallApplication{
 			InstallApplication: &mdmproto.InstallApplication{
