@@ -164,7 +164,9 @@ type InstallApplicationOptions struct {
 }
 
 type InstallApplicationConfiguration struct{}
-type InstallApplicationAttributes struct{}
+type InstallApplicationAttributes struct {
+	VpnUuid *string `plist:"VPNUUID,omitempty" json:"vpn_uuid,omitempty"`
+}
 
 type AccountConfiguration struct {
 	SkipPrimarySetupAccountCreation     bool           `plist:",omitempty" json:"skip_primary_setup_account_creation,omitempty"`
