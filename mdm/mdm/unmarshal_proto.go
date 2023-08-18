@@ -197,7 +197,8 @@ func protoToCommand(pb *mdmproto.Command) *Command {
 		pbattributes := pbc.GetAttributes()
 		if pbattributes != nil {
 			attributes = &InstallApplicationAttributes{
-				VpnUuid: nilIfEmptyString(pbattributes.GetVpnUuid()),
+				VpnUuid:   nilIfEmptyString(pbattributes.GetVpnUuid()),
+				Removable: nilIfTrue(pbattributes.GetRemovable()), //Default value is true
 			}
 		}
 
@@ -498,6 +499,13 @@ func nilIfEmptyString(s string) *string {
 
 func nilIfFalse(b bool) *bool {
 	if !b {
+		return nil
+
+	}
+	return &b
+}
+func nilIfTrue(b bool) *bool {
+	if b {
 		return nil
 
 	}

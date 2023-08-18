@@ -165,7 +165,8 @@ type InstallApplicationOptions struct {
 
 type InstallApplicationConfiguration struct{}
 type InstallApplicationAttributes struct {
-	VpnUuid *string `plist:"VPNUUID,omitempty" json:"vpn_uuid,omitempty"`
+	VpnUuid   *string `plist:"VPNUUID,omitempty" json:"vpn_uuid,omitempty"`
+	Removable *bool   `plist:Removable",omitempty" json:"removable,omitempty"`
 }
 
 type AccountConfiguration struct {
