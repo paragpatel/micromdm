@@ -1,5 +1,16 @@
 ## [Unreleased](https://github.com/micromdm/micromdm/compare/v1.11.0...main)
 
+- Add `-log-time` flag to include timestamps in log messages (#890)
+- Add `-device-signature-skew` flag to allow configuring clock skew when verifying device signatures (#887)
+- Tidy code for Go 1.20 and update Go version for Docker and CI (#902)
+- Add support for inspecting the MDM command queue (#895)
+  - See the [docs](https://github.com/micromdm/micromdm/blob/main/docs/user-guide/api-and-webhooks.md#inspecting-the-command-queue) for how to use
+- Fix HTTP status codes being swallowed by -http-debug flag (#906)
+- Fix pkg signature checks on non-macOS platforms (#930)
+- Project dependency updates (#888, #889, #900)
+
+Thanks to our contributors: @grahamgilbert, @jamesez, @korylprince
+
 ## [v1.11.0](https://github.com/micromdm/micromdm/compare/v1.10.1...v1.11.0)
 
 This release includes new features and fixes.
